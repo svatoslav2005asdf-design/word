@@ -56,6 +56,17 @@ local AutoEnabled = false
 local SmartEnabled = false
 local AntiAfkEnabled = true
 local Speed = 8
+local function GetSpeed()
+    -- The control updates Default before dispatching its callback.
+    -- Read the current state directly so delayed callbacks cannot restore old values.
+    local control = Controls.Speed
+    local value = control and control.Value
+    local current = type(value) == "table" and tonumber(value.Default) or nil
+    if current and current == current and current > -math.huge and current < math.huge then
+        Speed = math.clamp(current, 0.01, 100)
+    end
+    return Speed
+end
 local Mode = "Common"
 local Dictionary = {}
 local WordCount = 0
@@ -329,7 +340,7 @@ local function IsAvailable(word)
 end
 
 local function Estimate(length)
-    return (length - 1) / Speed + 0.05
+    return (length - 1) / GetSpeed() + 0.05
 end
 
 local function CandidatePool(letter, seconds)
@@ -457,6 +468,7 @@ local function StartTyping()
         local nextCharacter = 1
         local progress = 0
         local lastTick = os.clock()
+        local intervalSpeed = GetSpeed()
         while nextCharacter <= #characters do
             if not Valid() then
                 if Job == job then CancelTyping("Paused", false) end
@@ -468,8 +480,9 @@ local function StartTyping()
                 return
             end
             local now = os.clock()
-            progress = progress + (now - lastTick) * Speed
+            progress = progress + (now - lastTick) * intervalSpeed
             lastTick = now
+            intervalSpeed = GetSpeed()
             local changed = false
             -- Catch up all due characters after a slow frame, without extra waits.
             while nextCharacter <= #characters and progress >= weights[nextCharacter] do
@@ -673,7 +686,7 @@ Session.GetStatus = function()
     return {
         alive = Alive, status = Status, word = SelectedWord, words = WordCount,
         dictionary = DictionaryStatus, auto = AutoEnabled, smart = SmartEnabled,
-        antiAfk = AntiAfkEnabled, mode = Mode, speed = Speed, typing = Job ~= nil,
+        antiAfk = AntiAfkEnabled, mode = Mode, speed = GetSpeed(), typing = Job ~= nil,
         pending = Pending ~= nil, attempts = Attempts, turn = CurrentTurn,
         phase = CurrentState and CurrentState.phase, submittedWord = Pending and Pending.word,
         roundWords = roundWords, round = CurrentState and CurrentState.round,
@@ -765,7 +778,7 @@ local setupOk, setupError = xpcall(function()
         end
     end})
     Controls.Speed = main:Slider({Title = "Typing Speed", Desc = "Characters per second (0.01-100)", Step = 0.01, IsTooltip = true, IsTextbox = true,
-        Value = {Min = 0.01, Max = 100, Default = 8}, Callback = function(value) Speed = math.clamp(tonumber(value) or 8, 0.01, 100) end})
+        Value = {Min = 0.01, Max = 100, Default = 8}, Callback = function() GetSpeed() end})
     Controls.Smart = main:Toggle({Title = "Smart Typing", Value = false, Callback = function(value) SmartEnabled = value end})
     Controls.Mode = main:Dropdown({Title = "Word Mode", Values = {"Common", "Shortest", "Longest"}, Value = "Common",
         AllowNone = false, Callback = function(value)
