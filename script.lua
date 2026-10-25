@@ -25,7 +25,6 @@ end
 
 local LibraryUrl = "https://github.com/Footagesus/WindUI"
 local DictionaryUrl = "https://raw.githubusercontent.com/Harrix/Russian-Nouns/main/dist/russian_nouns.txt"
-local CreditsUrl = "https://raw.githubusercontent.com/Bac0nHck/Something/refs/heads/main/telegram"
 local CachePath = "WordAutoType_dictionary_v1.txt"
 local Randomizer = Random.new()
 local Connections = {}
@@ -74,7 +73,7 @@ local DictionaryStatus = "Loading dictionary..."
 local Status = "Waiting for game state"
 local SelectedWord = "None"
 local StatusPanel
-local CreditsAddress = "t.me/arceusxcommunity"
+local CreditsAddress = "t.me/Lesxov"
 local CopyField
 local NextAttemptAt = 0
 local LastPanelText
@@ -108,59 +107,144 @@ local CommonText = [[
 шапка шар шахматы шкаф школа шляпа шмель шнур шорты шоссе шуба шум шутка
 щенок щека щётка щука экран экскурсия электричество этаж эхо юбка юг юла юность яблоко ягода язык яйцо якорь яма ящик ящерица
 ]]
--- Built-in vocabulary: 500 unique words.
+-- Built-in vocabulary: 1345 unique words.
 -- Source: Harrix/Russian-Nouns, plus the original common words.
 local BuiltInDictionaryText = [[
-абрикос автобус автомобиль адрес азбука акула алмаз альбом ананас апельсин
-аптека арбуз артист архетип астронавт бабочка багаж банан банка барабан
-бассейн башня белка берег берёза библиотека билет бинт блин болото
-ботинок брат бревно брыла букет булка бумага бутылка вагон ваза
-валенок ванна варенье ведро велосипед веник верблюд верёвка ветер ветка
-вечер вилка виноград вишня внезапность вода водопад воздух вокзал волк
-волна воробей ворона врач время вытачивание газета гараж гвоздь герой
-гитара глаз глина гнездо голубь гонт гора город горох гость
-гриб гроза гром груша гуттаперча дверь девочка дедушка деревня дерево
-диван дождь докладывание дом дорога доска друг дупло дым дыня
-дятел еда ель енот железо жемчуг живот жираф жук журнал
-забор завод залишек заяц звезда зверь звонок зебра зеркало зерно
-зима змея знак золото зонт зуб игла игра игрушка извращенка
-изюм индюк иней интеграция искра история йог йога йод кабан
-кабачок камень камешник капуста карандаш карман карта картина картофель касса
-качели каша кефир кибернетик кисть кит клетка ключ книга кнопка
-ковёр коза колесо колокол комната компас контрафакция конфета конь корабль
-корень корзина коридор корова костёр кошка край краска кресло кролик
-кружка крыло крыша кубик кузнечик курица куст кухня лакфиоль лампа
-ласточка лебедь лев лента лес лестница лето лимон лиса лист
-лодка ложка лошадь лужа лук луна луч лыжа лёд магазин
-майка мак малина мальчик мама масло машина медведь месяц метла
-метро мешок минарет мир молоко молоток море морковь мороз мост
-мудрствование музыка мука муравей муха мыло мышь мяч мёд науковидность
-небо неделя недоброжелательство нелюбовь неподвластность нитка нож ножницы нора нос
-носок ночь обед облако обстановка огонь огород огрубление огурец одежда
-одеяло озеро окаёмка окно окольничий окунь олень ольшанка орех орёл
-оса осень остров ответ оценщик очки пакет палка пальто папа
-пар парк парта парус паук пена перец перо песня песок
-петух пещера пила пирог письмо планета платье площадка подарок подбивка
-подкапывание поезд поле полесник полка полотенце помидор попечительша посуда потолок
-почта праздник приговорочка птица пчела пыль работа радиоактивность радуга разбрасывание
-рак ракета ракушка рама рамооборот растение река репа рис рисунок
-робот рог роза рот роща рубашка рука ручей ручка рыба
-рынок рюкзак сад салат самолёт сапог сахар сбруйка свет свеча
-свинья свитер свёкла север сейид семья семя сено сердце сестра
-сеть сила скала скатерть сковорода слово слон смех снег собака
-сова сок сокол солдат солнце соль сорока сосед сосна спина
-спорт стакан стек стекло стена стол стул сумка суп сфалерит
-сыр таблица тарелка театр телефон тень тесто тигр торт точка
-трава трактор тропа труба туман тыква угол уголь удача ужин
-узел улитка улица улыбка урок утка утро ухо ученик учитель
-фабрика факел фартук фасоль февраль фонарь фонтан форма фотография фригийка
-футбол халат хвост хлеб хлопок холм холодильник хомяк хор художник
-цапля цвет цветок цепь цирк цифра цыплёнок чай чайник час
-часы чашка человек черепаха черника чертёж чеснок число чудо чулок
-шапка шар шахматы шкаф школа шляпа шмель шнур шорты шоссе
-шуба шум шутка щека щелкопёрство щенок щука щётка экран экскурсия
-электричество этаж эхо юбка юг юла юность яблоко ягода язык
-яйцо якорь яма ятаган ятовь ящерица ящик ёж ёлка ёрш
+аббатство абитуриент абрикос авангардист авантюрность автобус автография автомобиль аггравация агитпункт
+аджика адрес азбука акселерат акула акустик алгебра аллергология аллигатор алмаз
+альбом американизация амулет ананас антивещество антитело апельсин аптека арбуз аргументированность
+армянка артист артистичность архетип астронавт атаманец аффектация аэромеханика бабочка багаж
+бактериология банан банка банщица барабан баранинка бассейн башня беззубка белец
+белка белокровие белошвейка бензинчик берег берейтор берёза беснующийся беспокойство бессмертность
+бестактность бесчинник библиотека билет бинт биржевик блин блокгауз богомолье богостроитель
+боливийка болото большевик ботинок браман брандмейстер брат бревно бремя броня
+брыкун брыла бузотёрство буква букет булка бум бумага бурчание бутылка
+вагон ваза валенок валкование ванна варенье варильщик вдовец вдёргивание веда
+ведро велосипед вельвет веник верблюд верноподданная вероника верстание верстачок вершительница
+верёвка ветер ветка вечер взаимовыручка взблеск вздёржка вилка виноград висельник
+вишня вклад вместимость внезапность вогнутость вода водка водоверть водогрейня водомёт
+водонагреватель водоносность водопад водопойка водь военнообязанная возбуждение воздержавшийся воздух войлок
+вокабула вокабулярий вокзал волк волна вольная воробей ворона воспроизведение восточник
+врач вредоносность время вспаивание вставка всход выбуривание вывихнутость вывязывание выковка
+выкуривание выпаривание выпрядание выпускание выселенец высушивание вытачивание выхухоль вышколка газета
+газончик газохранилище гамлет гараж гваюла гвоздь гектолитр геохимик гермафродитизм героизм
+герой гжель гибкость гидравлик гидрант гиперболичность гитара глаз глина гнездо
+гоготание година голубь гонт гора горбина гореваньице горилка город горох
+горюн гость граб граната гриб гримаса гроза гром груша грушка
+гугнивость гуттаперча дверь двор деаэратор деблокада деваха девочка девчонка девяностолетие
+деградация дегуманизация дедуня дедушка деревня дерево державец джейран джентльменство джокер
+диафон диван динамит директорат дитя дифференциация добыча дождевик дождь докладывание
+дом донашивание дорога доска драже драцена драчунья дрессировщица дрова дрожина
+дрозофила друг дружелюбие дупло дух дым дымоуловитель дыня дятел еда
+езда ель енот ехидник жарево жарища жаровыносливость жатка железнодорожница железо
+желчь жемчуг живоглот живот жираф жирондист житняк жук журнал журналистика
+забор завод заигрывание закрутка зализанность залишек заматерелость запах запоночка зарянка
+затаённость затирание захват защищённость заяц звезда зверь звонок звякание звёздность
+зебра зеленца землепашец земство зеркало зерно зернопровод зима зимушка злец
+злоба змея знак знаточество золото зонт зооферма зуб игла игра
+игрушка идеография иероглиф извращенка изломанность изюм ильм именинник имитаторство инвариантность
+индоевропеист индюк иней институтство инсценирование интеграция интересант искра испанистка исповедание
+исподнее истопница история исчисление иудейка ишурия йог йога йод кабан
+кабачок каботинство каганец кадет казарка казино камень камешник канаус капитель
+каптана капуста каракулька карандаш карась карман карта картина картофель касса
+кастрюлька каталептик качели каша кашмирка каёмочка квартирование квартплата кернер кефир
+кибернетик кивок кинопрокат киносъёмка кипрегель кирка кисть кит кишлак клетка
+ключ книга книгодержатель кнопка кобылёнка ковёр ковёрщица кожник коза кокетка
+колесо коловратность колокол коломазь колонизатор колориметр комиссионка коммерциализация комната комолость
+комочек компактность компас компрометация компьютеризация кондёр коногон конституционист контрактация контрафакция
+контузия конфета конъюнктурщина конь координирование копирование коптильщик корабль корень корзина
+коридор коринка корова корообдирка корунд корячка костоправка костёр кошка край
+красавица краска крах кресло кролик кромсание крохотка кружка крутоверть крыжовник
+крыло крыша кубик кубок кузнечик кукельван кулак кулачок культурник курильщица
+курица курорт куст кутила кухня лаг лазер лакфиоль ламаизм лампа
+лапушка ларинголог ласточка лебедь лев лейкопластырь лента леопард лепидодендрон лес
+лесенка лесовывозка лесоистребление лесотехникум лестница лето лигирование лилипутик лимон линовальщик
+лиса лист листвяг лодка ложка ломка ломовик лопушняк лошадь лужа
+лук луна лунит луч лыжа лыжник льдогенератор любостяжание любостяжательница ляшка
+лёд магазин магазинщица мадьярка майка мак малина маловодье мальчик мальчуган
+мама маниакальность маранта марго мародёрка марсель масло махинища машина маэстро
+медаль медведь медиация медик медпункт медяк мезоглея мембрана мент месяц
+метла метро мешок мешочек мидия микроскоп минарет министерство мир миролюбец
+миропознание мичман многоводность многозначность многообразность многоплодность многосложность можжевелина молоко молоток
+моментальность монструозность морда море морковь мороз мост мостостроение мотня мотовелосипед
+мотоциклистка мотыль мстительность мудрствование мужеложство мужеубийца музыка мука муравей мурена
+мусор муха мыло мыс мышь мышьяк мыщелок мяч мёд набирание
+набойка награждение нагромождённость надлобье наживка называние налавливание намерзь намораживание напаривание
+напускание напутывание напёрсточек наружное насаливание насечка насос натаивание натирка натурщик
+науковидность нахрап национализм начальница начерчивание небо невозвращенка негодник неделя недоброжелательство
+недогадка недоуменность недоумие некондиционность некромант нелюбовь неограниченность неодолимость неосуществимость неотчуждаемость
+неохота непартийность неподвластность неправедность неровня несвежесть несовершеннолетняя несолидность неудовлетворительность нешуточность
+низкость нилотка нитка ниточница ногата нож ножницы нора норма нос
+носишко носок ночь нудность нумизматика обдёргивание обед обезлесение обесцвечивание обесценение
+обжалование обилие обкраивание облако обмирщение обновляемость обновочка ободник обольститель оборка
+оборотень обрубная обскурантизм обстановка обтягивание оглашение огонь огород огрубление огурец
+одежда одеяло односоставность одностаничник одонтология ожидание озеро озимка окаёмка окно
+окольничий октавист окунь олень олешек ольшанка ономатология опилка опустошённость опыт
+орех ориентация орт оружейник орёл оса осень осинка осмотрщик основание
+остров отбывание отведение отверделость ответ отводок отдалённость отделочница отложение отпарка
+отповедь отрастание отрывистость отсвет охвостье охранение оценщик очки паж пакет
+палка пальто папа папуша пар паранефрит парашечник парашют парк парта
+парус паук пахит паясничество пена пепсин первичность первоисточник первотельная перевал
+перегонка пережабина перековывание перекупывание перелезание перемежевание переминание перескабливание перестроение переходчивость
+перец переярка перипатетик перо персик песня песок петух пещера пианино
+пикетаж пила пирамидон пиранометр пирог письмена письмо плаксивость план планета
+пластинка платье плафон плезиозавр плешанка плодовитость плоскость площадка площица плёс
+побледнение поверье подарок подбавление подбел подбивка подбойщик подвешивание подвёрстывание подгузник
+подзол подкапывание подкачивание подклёпывание подмешивание поднос подпарывание подрывщик подслеповатость подстрижка
+подфарок поезд позиционность позолотчик позументщик покалывание поле полемарх поленика полесник
+поликлиника полка пологость полонянка полотенце полухронометр поместьице помидор попечительша популяризатор
+портняжничество посевщик посланец поспешность посуда посыльщик посягновение потворщица потолок почта
+православие праздник прапрадед прах предосторожность предшественник предъявитель приветствие привинчивание привяливание
+приговорочка придумывание прижимщица прилипчивость примерщица прирез присвоитель приспособляемость пристрастие притворщик
+причёска пришелица пришпоривание приёмщик пробуривание провозгласитель продёржка прожектёр прозаичность проктит
+пролысина промасливание промес промысловик прорастаемость простатит просфира противоборство противоречие процентовка
+прошивальщик прощелыжник псаммон психоневролог птица пунктир пунктирование пуританизм пуританство путность
+пчела пчеловод пыль пьяника пьянюга рабовладелец работа работища радиоактивность радиотрансляция
+радуга разбрасывание разбухание развальцовка развозчик развратительница разгар разглядка разлучение размачтовывание
+разноголосица разнообразие разнуздывание разок рак ракета ракушка рама рамооборот ранет
+раскопка распивание распиловка расплавка распялка расспросчик растекание растение растениеводство растильня
+расфасовщик расформирование расценка рахитичка реакция реалистка ребёночек реверс револьверишко регент
+режиссёрство резонирование резонёрствование река реляция репа ретуширование рефлективность рецессивность ринк
+рис рисунок робот рог рожденница роза рольмопс росянка рот роща
+рубашка рублик рука руководительница ручей ручка рыба рыбёшка рынок рюкзак
+ряженая рясник сабей сад садовник саепёк салат саммит самовосхваление самовяз
+самолёт самотёк самочка сапог саранчук сарафанишко сахар сахарозавод сбруйка сварщик
+свет светонепроницаемость светопроницаемость светосигнализация свеча свиносовхоз свинья свистун свитер свободолюбец
+своеволие свёкла север седина сейид секстильон селекционер селёдочница семеноведение семья
+семя сенаторша сено сердце сестра сетование сеть сила силуэтистка синкопа
+синтетика синхронизатор сирокко сказуемое скакалка скала скатерть складчинка склейщица склочничество
+сковорода сколка скопидомка сластолюбец следствие словинец слово слон смарывание смех
+смолёвка смрадность снайпинг снег сновидец сноповязальщик соаренда собака сова соглядатай
+сок сокамерник сокол сокрушительность солдат солидность солнце соль сопилка сопровождение
+сопун сорока сосед сосна составитель сострастие спарывание спектрограф спина спиралька
+спирогира спорость спорт спёртость срисовка сродственница стакан станичник станкостроитель староста
+старшой створка стек стекло стена стихослагательство стожок стол сторонник стрелочница
+стрепетёнок стригольничество стрижка стружка структура стул ступенчатость су суданец сумасброд
+сумка суммирование суп сусальность суслик существование сфалерит счерпывание сыр сычонок
+табаковод таблица табун тарелка татуировка театр театрализация телевизор телефон темница
+тендер тень теплоэнергетика терренкур теснина тесто техник тигр токсикология толкач
+торизм торт точка трава травонька трактамент трактор трахеотомия трепальня треста
+третьекурсница трещание трилобит трифтонг трихинелла тромбофлебит тропа трость труба трясение
+тулумбас туман туннельщик тускловатость тухлость тушёвка тыква тюк убийственность увеличение
+увечье увёртка увёртывание угол уголь удача ужин узел улитка улица
+уличение улыбка умыкание уплотнитель урок успение устроительница утка утолока утро
+ухо учащение ученик учитель учителька фабианство фабрика фабрикант факел фанзочка
+фантазёрка фартук фасоль фаталистичность февраль фединг фенакит фи фиг фила
+финикиянин фонарь фонтан форма форштадт фотография фрахтователь фрачишко фреза френч
+фригийка фульгурит фундирование футбол халат хвост хедерник хижинка хина хлам
+хлеб хлебофураж хлопок холм холодильник хомутишко хомутник хомяк хор храпак
+хромая хрусталик художник цапля цвет цветок цевьё цепь цирк цифра
+цыплёнок цыпочка чай чайник чалма час часы чашка чеканка человек
+человеконенавистничество черепаха черника черпальщица чертёж чеснок четвертак четырёхклассник четырёхклассница число
+чресла чудо чулок чумная чёсанец шабёр шаг шаманка шапка шар
+шаромыжничество шахматы шезлонг шериф шерсточесалка шингард шипучее шишельница шкаторина шкаф
+школа шлакование шлейка шлихтовка шлюз шляпа шмель шнур шорты шоссе
+шпингалет шпротина шу шуба шугание шум шутка щека щелкопёрство щелчок
+щенок щипальщик щука щётка эконом экономность экран экскурсия эластик электричество
+электробритва электросварщик элиминирование эмальер энциклопедистка эпикурейство эстакада эстрадность этаж эхо
+эшарп юбка юг юла юность юрага юстирование яблоко ягель ягода
+язык яйцеклетка яйцо якорь яма ярлык ярь ятаган ятовь ячменка
+ящерица ящик ёж ёлка ёрш
 ]]
 local CommonWords = {}
 local CommonSet = {}
@@ -259,6 +343,90 @@ local function BuildDictionary(text)
     return index, count
 end
 
+local Features = {
+    Words = {}, MatchWords = {}, Serial = 0, History = {},
+    ConfigName = "default", WordsName = "words", IncludeWords = true, Input = "",
+}
+if type(Environment.WordAutoTypeHistory) == "table" then
+    Features.History = Environment.WordAutoTypeHistory
+end
+Environment.WordAutoTypeHistory = Features.History
+Features.Serial = tonumber(Environment.WordAutoTypeMatchSerial) or 0
+
+function Features.ParseWords(value)
+    local result, seen = {}, {}
+    local function add(token)
+        local word = Normalize(token)
+        if word and not seen[Canonical(word)] then
+            seen[Canonical(word)] = true
+            table.insert(result, word)
+        end
+    end
+    if type(value) == "string" then
+        for token in value:gmatch("[^%s,;]+") do add(token) end
+    elseif type(value) == "table" then
+        for _, token in ipairs(value) do add(token) end
+    else
+        error("Words must be text or a list")
+    end
+    return result
+end
+
+function Features.Rebuild(words)
+    local normalized = Features.ParseWords(words)
+    local index, count = BuildDictionary((BuiltInDictionaryText .. "\n" .. table.concat(normalized, "\n")):gsub("%s+", "\n"))
+    if not Alive or not index then return false end
+    Features.Words = normalized
+    Dictionary, WordCount = index, count
+    DictionaryStatus = "Built-in + custom | " .. tostring(count) .. " words"
+    CommonWords, CommonSet = {}, {}
+    for word in (CommonText .. "\n" .. table.concat(normalized, "\n")):gmatch("%S+") do
+        local normalizedWord = Normalize(word)
+        if normalizedWord and not CommonSet[Canonical(normalizedWord)] then
+            CommonSet[Canonical(normalizedWord)] = true
+            table.insert(CommonWords, normalizedWord)
+        end
+    end
+    return true
+end
+
+function Features.NewMatch()
+    Features.MatchWords = {}
+    Features.Serial = Features.Serial + 1
+    Environment.WordAutoTypeMatchSerial = Features.Serial
+end
+
+function Features.Remember(word)
+    local key = Canonical(word)
+    if Features.MatchWords[key] then return end
+    Features.MatchWords[key] = true
+    local previous = Features.History[key]
+    Features.History[key] = {
+        uses = math.min(100000, (type(previous) == "table" and tonumber(previous.uses) or 0) + 1),
+        match = Features.Serial,
+    }
+end
+
+function Features.Choose(pool)
+    local weights, total = {}, 0
+    for i, word in ipairs(pool) do
+        local previous = Features.History[Canonical(word)]
+        local uses = type(previous) == "table" and tonumber(previous.uses) or 0
+        local age = type(previous) == "table" and Features.Serial - (tonumber(previous.match) or 0) or 100
+        local weight = 1 / (1 + math.max(0, uses)) ^ 2
+        if age <= 1 then weight = weight * 0.05
+        elseif age <= 3 then weight = weight * 0.25 end
+        weights[i] = weight
+        total = total + weight
+    end
+    local target = Randomizer:NextNumber() * total
+    for i, word in ipairs(pool) do
+        target = target - weights[i]
+        if target <= 0 then return word end
+    end
+    return pool[#pool]
+end
+
 local function Fetch(url, fresh)
     if fresh then
         url = url .. "?wat=" .. HttpService:GenerateGUID(false)
@@ -336,7 +504,7 @@ end
 
 local function IsAvailable(word)
     local normalized = Canonical(word)
-    return not Used[normalized] and not Rejected[normalized] and not Tried[normalized] and not RoundWords[normalized]
+    return not Features.MatchWords[normalized] and not Used[normalized] and not Rejected[normalized] and not Tried[normalized] and not RoundWords[normalized]
 end
 
 local function Estimate(length)
@@ -391,6 +559,7 @@ local function Submit(job)
     Pending = {key = job.key, word = job.word, started = os.clock(), requestId = requestId + 1}
     Attempts = Attempts + 1
     Tried[Canonical(job.word)] = true
+    Features.Remember(job.word)
     RoundWords[Canonical(job.word)] = job.word
     if type(firesignal) == "function" then
         local ok = pcall(firesignal, box.FocusLost, true)
@@ -436,7 +605,7 @@ local function StartTyping()
         Status = "No available word fits this turn"
         return false
     end
-    local word = pool[Randomizer:NextInteger(1, #pool)]
+    local word = Features.Choose(pool)
     local job = {key = CurrentTurn, word = word, smart = SmartEnabled}
     Job = job
     SelectedWord = word
@@ -565,7 +734,9 @@ local function HandlePacket(packet)
         local match = MatchKey(packet)
         if CurrentMatch ~= match then
             CurrentMatch = match
+            Features.NewMatch()
             Used = {}
+            Rejected = {}
             Completed = {}
         end
         local round = match .. ":" .. tostring(packet.round)
@@ -593,6 +764,7 @@ local function HandlePacket(packet)
             local word = Normalize(packet.acceptedWord)
             if word then
                 Used[Canonical(word)] = true
+                Features.Remember(word)
                 RoundWords[Canonical(word)] = word
             end
             Completed[key] = true
@@ -602,7 +774,10 @@ local function HandlePacket(packet)
             return
         end
         local word = Normalize(packet.word)
-        if word then Used[Canonical(word)] = true end
+        if word then
+            Used[Canonical(word)] = true
+            Features.Remember(word)
+        end
         if packet.round == CurrentState.round then
             if word then RoundWords[Canonical(word)] = word end
             CurrentState.acceptedWord = packet.word
@@ -661,6 +836,112 @@ local function StopAll()
     CancelTyping("Stopped", true)
     if Controls.Auto then Controls.Auto:Set(false) end
     if Controls.Smart then Controls.Smart:Set(false) end
+end
+
+function Features.Path(name, kind)
+    if type(name) ~= "string" or not name:match("^[%w_-]+$") or #name > 48 then
+        error("Use a config name with 1-48 Latin letters, digits, _ or -")
+    end
+    return "WordAutoType_" .. kind .. "_" .. name .. ".json"
+end
+
+function Features.HistorySnapshot()
+    local copy = {}
+    for word, item in pairs(Features.History) do
+        if type(item) == "table" and Normalize(word) then
+            copy[word] = {uses = item.uses, match = item.match}
+        end
+    end
+    return copy
+end
+
+function Features.Save(name, wordsOnly)
+    assert(type(writefile) == "function", "This executor cannot save files")
+    local payload
+    if wordsOnly then
+        payload = {version = 1, kind = "words", words = Features.Words}
+    else
+        payload = {
+            version = 1, kind = "config", speed = GetSpeed(), mode = Mode,
+            auto = AutoEnabled, smart = SmartEnabled, antiAfk = AntiAfkEnabled,
+            keybind = Controls.Keybind and Controls.Keybind.Value or "RightControl",
+            history = Features.HistorySnapshot(), serial = Features.Serial,
+        }
+        if Features.IncludeWords then payload.words = Features.Words end
+    end
+    local path = Features.Path(name, wordsOnly and "words" or "config")
+    writefile(path, HttpService:JSONEncode(payload))
+    Notify("Saved: " .. path)
+end
+
+function Features.Load(name, wordsOnly)
+    assert(type(readfile) == "function", "This executor cannot load files")
+    local path = Features.Path(name, wordsOnly and "words" or "config")
+    local payload = HttpService:JSONDecode(readfile(path))
+    assert(type(payload) == "table" and payload.version == 1, "Unsupported config")
+    assert(payload.kind == (wordsOnly and "words" or "config"), "Wrong config type")
+    local words
+    if payload.words ~= nil then
+        assert(type(payload.words) == "table", "Invalid saved words")
+        words = Features.ParseWords(payload.words)
+    end
+    if wordsOnly then
+        assert(words, "No words in this file")
+        local combined = table.clone(Features.Words)
+        for _, word in ipairs(words) do table.insert(combined, word) end
+        assert(Features.Rebuild(combined), "Dictionary loading cancelled")
+    else
+        local speed = tonumber(payload.speed)
+        assert(speed and speed == speed and speed >= 0.01 and speed <= 100, "Invalid speed")
+        assert(payload.mode == "Common" or payload.mode == "Shortest" or payload.mode == "Longest", "Invalid mode")
+        for _, key in ipairs({"auto", "smart", "antiAfk"}) do
+            assert(type(payload[key]) == "boolean", "Invalid toggle: " .. key)
+        end
+        assert(type(payload.keybind) == "string" and Enum.KeyCode[payload.keybind], "Invalid keybind")
+        local history = {}
+        local serial = tonumber(payload.serial) or 0
+        assert(serial >= 0 and serial < 1e12 and serial == math.floor(serial), "Invalid match history")
+        if payload.history ~= nil then
+            assert(type(payload.history) == "table", "Invalid history")
+            for word, item in pairs(payload.history) do
+                local normalized = Normalize(word)
+                if normalized and type(item) == "table" then
+                    local uses, match = tonumber(item.uses), tonumber(item.match)
+                    if uses and uses >= 0 and uses <= 100000 and match and match >= 0 and match <= serial then
+                        history[Canonical(normalized)] = {uses = uses, match = match}
+                    end
+                end
+            end
+        end
+        CancelTyping("Loading config", false)
+        if words then assert(Features.Rebuild(words), "Dictionary loading cancelled") end
+        -- Keep this match's exclusions when loading settings during a game.
+        Features.Serial = math.max(Features.Serial, serial)
+        for word, item in pairs(history) do
+            item.match = Features.Serial - (serial - item.match)
+            local existing = Features.History[word]
+            if not existing or item.uses > (tonumber(existing.uses) or 0) then
+                Features.History[word] = item
+            end
+        end
+        Environment.WordAutoTypeMatchSerial = Features.Serial
+        Speed = speed
+        Controls.Speed:Set(speed)
+        GetSpeed()
+        Controls.Mode:Select(payload.mode)
+        Mode = payload.mode
+        Controls.Keybind:Set(payload.keybind)
+        Controls.Smart:Set(payload.smart)
+        Controls.AntiAfk:Set(payload.antiAfk)
+        Controls.Auto:Set(payload.auto)
+        SmartEnabled, AntiAfkEnabled, AutoEnabled = payload.smart, payload.antiAfk, payload.auto
+    end
+    Notify("Loaded: " .. path)
+end
+
+function Features.Safe(callback)
+    local ok, failure = pcall(callback)
+    if not ok then Notify(tostring(failure)) end
 end
 
 local Session = {}
@@ -792,6 +1073,37 @@ local setupOk, setupError = xpcall(function()
     Controls.Keybind = settings:Keybind({Title = "Menu Keybind", Value = "RightControl",
         Blacklist = {"Return", "KeypadEnter", "MouseLeftButton", "MouseRightButton"}, Callback = function() end})
     settings:Button({Title = "Unload", Icon = "power", Callback = function() Session.Unload() end})
+    local configs = Window:Tab({Title = "Configs", Icon = "save"})
+    configs:Section({Title = "Settings config"})
+    configs:Input({Title = "Config name", Value = "default", Callback = function(value) Features.ConfigName = value end})
+    configs:Toggle({Title = "Include custom words", Value = true, Callback = function(value) Features.IncludeWords = value end})
+    configs:Button({Title = "Save config", Callback = function()
+        Features.Safe(function() Features.Save(Features.ConfigName, false) end)
+    end})
+    configs:Button({Title = "Load config", Callback = function()
+        Features.Safe(function() Features.Load(Features.ConfigName, false) end)
+    end})
+    configs:Section({Title = "Custom dictionary"})
+    configs:Input({Title = "Add words", Desc = "Russian words, separated by spaces, commas or newlines", Type = "Textarea", Value = "",
+        Callback = function(value) Features.Input = value end})
+    configs:Button({Title = "Add to dictionary", Callback = function()
+        Features.Safe(function()
+            local incoming = Features.ParseWords(Features.Input)
+            assert(#incoming > 0, "Enter Russian words (2-30 letters)")
+            local words = table.clone(Features.Words)
+            for _, word in ipairs(incoming) do table.insert(words, word) end
+            assert(Features.Rebuild(words), "Dictionary loading cancelled")
+            Notify("Custom words: " .. tostring(#Features.Words) .. " | Total: " .. tostring(WordCount))
+        end)
+    end})
+    configs:Input({Title = "Words config name", Value = "words", Callback = function(value) Features.WordsName = value end})
+    configs:Button({Title = "Save words only", Callback = function()
+        Features.Safe(function() Features.Save(Features.WordsName, true) end)
+    end})
+    configs:Button({Title = "Load words (merge)", Callback = function()
+        Features.Safe(function() Features.Load(Features.WordsName, true) end)
+    end})
+
     settings:Section({Title = "Credits"})
     local function CopyLink(link)
         local copy = setclipboard or toclipboard
@@ -803,7 +1115,7 @@ local setupOk, setupError = xpcall(function()
             Notify("Select and copy the link below Credits.")
         end
     end
-    Controls.Credits = settings:Button({Title = "Credits - " .. CreditsAddress, Icon = "copy", Callback = function() CopyLink("https://" .. CreditsAddress) end})
+    Controls.Credits = settings:Button({Title = "Credits - @Lesxov", Icon = "copy", Callback = function() CopyLink("https://" .. CreditsAddress) end})
     settings:Button({Title = "UI Library - github.com/Footagesus/WindUI", Icon = "copy", Callback = function() CopyLink(LibraryUrl) end})
     main:Select()
 end, debug.traceback)
@@ -861,22 +1173,8 @@ Connect(Player.Idled, function()
     end
 end)
 
-Spawn(function()
-    local response = Fetch(CreditsUrl, true)
-    if not Alive then return end
-    if response then
-        local address = response:match("^%s*(.-)%s*$"):gsub("^https?://", ""):gsub("/$", "")
-        if address:match("^t%.me/[%w_]+$") then CreditsAddress = address end
-    end
-    Controls.Credits:SetTitle("Credits - " .. CreditsAddress)
-end)
 
-Spawn(function()
-    local index, count = BuildDictionary(BuiltInDictionaryText:gsub("%s+", "\n"))
-    if not Alive then return end
-    Dictionary, WordCount = index, count
-    DictionaryStatus = "Built-in | " .. tostring(count) .. " words"
-end)
+Features.Rebuild({})
 
 Spawn(function()
     local nextSync = os.clock() + 2
