@@ -246,6 +246,144 @@ local BuiltInDictionaryText = [[
 язык яйцеклетка яйцо якорь яма ярлык ярь ятаган ятовь ячменка
 ящерица ящик ёж ёлка ёрш
 ]]
+-- 675 unique forms longer than 25 letters (OpenCorpora; includes inflected forms and proper names).
+local UltraDictionaryText = [[
+авиадвигателестроительного авиадвигателестроительному авиадвигателестроительными автомобилеопрокидывателями акрилонитрилбутадиенстироловая
+акрилонитрилбутадиенстиролового акрилонитрилбутадиенстироловое акрилонитрилбутадиенстироловой акрилонитрилбутадиенстироловом акрилонитрилбутадиенстироловому
+акрилонитрилбутадиенстироловою акрилонитрилбутадиенстироловую акрилонитрилбутадиенстироловые акрилонитрилбутадиенстироловый акрилонитрилбутадиенстироловым
+акрилонитрилбутадиенстироловыми акрилонитрилбутадиенстироловых александровогайагропромснабах александровогайагропромснабы алтайскагропромавтотрансов
+амуроблавтотехобслуживания аркадакагропроммехмонтажкомплектами аркадакагропроммехмонтажкомплекте аркадакагропроммехмонтажкомплектов аркадакагропроммехмонтажкомплекту
+архангельскагропромпусконаладка архангельскагропромпусконаладке архангельскагропромпусконаладки архангельскагропромпусконаладку архангельскагропромснабами
+аэрофотолесоустроительного аэрофотолесоустроительному аэрофотолесоустроительными балаковоагропроммехмонтажами балаковоагропроммехмонтажем
+балаковоагропроммехмонтажи балаковотурбоатомэнергоремонта балаковотурбоатомэнергоремонтов балаковотурбоатомэнергоремонты балашовагропроммехмонтажами
+балашовагропроммехмонтажах балашовагропроммехмонтажов балашовагропроммехмонтажом балластораспределительного балластораспределительному
+балластораспределительными бокситогорскагропромтехника большеглушицкагпропромтрансах большеглушицкагпропромтрансе большесолдатскагропромснабам
+большечерниговскагропромтрансе большечерниговскагропромтрансом большечерниговскагропромтрансу братскпромэнергокомплектов брянскчернобыльстройзаказчика
+брянскчернобыльстройзаказчики бутурлиновкаагропромтрансам верхневолгоэлектромонтажах верхневолгоэлектромонтажей верхневолгоэлектромонтажем
+верхневолгоэлектромонтажом верхнемамонагропромтрансами верхнемамонагропромтрансов верхнетоемскремтехпредхимснабами верхнетоемскремтехпредхимснабу
+верхнехаваагропромтрансами владимирагропромпусконаладкой волговятмашэлектроснабсбытом волгограднефтепродуктавтоматикой волгограднефтепродуктавтоматикою
+волгоградэнергосетьпроектами волгоградэнергосетьпроектов волгоградэнергосетьпроекту волгоградэнергосетьпроекты волгокамподводтрубопроводов
+волгокамподводтрубопроводу волоколамскагропромснабами воронежнефтепродуктавтоматике воронежнефтепродуктавтоматику воскресенскагропромтрансах
+востоксельэлектросетьстрое востоксельэлектросетьстрой востоксельэлектросетьстроя востоксибсельэнергопроектах востоксибсельэнергопромами
+востсибгипроспецагропромах высокопревосходительствами газонефтеперерабатывающего газонефтеперерабатывающему газонефтеперерабатывающими
+гексаметилендиаминсебацината гексаметилендиаминсебацинатах гидрохинонмоносульфокислот гидрохинонмоносульфокислота гидрохинонмоносульфокислотам
+гидрохинонмоносульфокислотами гидрохинонмоносульфокислотах гидрохинонмоносульфокислоте гидрохинонмоносульфокислотой гидрохинонмоносульфокислотою
+гидрохинонмоносульфокислоту гидрохинонмоносульфокислоты дальнереченскагропромтранса дальнереченскагропромэнерго дальэнергостроймеханизации
+дергачиагропроммехмонтажом динамобаллистокардиографам динамобаллистокардиографами динамобаллистокардиографах динамобаллистокардиографов
+динамобаллистокардиографом дифенилоксидтетракарбоновая дифенилоксидтетракарбонового дифенилоксидтетракарбоновое дифенилоксидтетракарбоновой
+дифенилоксидтетракарбоновом дифенилоксидтетракарбоновому дифенилоксидтетракарбоновою дифенилоксидтетракарбоновую дифенилоксидтетракарбоновые
+дифенилоксидтетракарбоновый дифенилоксидтетракарбоновым дифенилоксидтетракарбоновыми дифенилоксидтетракарбоновых екатеринбургнефтепродуктом
+екатериновкаагропромснабах екатериновкаагропромснабом екатериновкаагропромтрансам екатериновкаагропромтрансах забайкалсельэлектросетьстроем
+запсибсельэлектросетьстрою ивановоавтотрансобслуживанию институционализировавшаяся институционализировавшегося институционализировавшееся
+институционализировавшейся институционализировавшемся институционализировавшемуся институционализировавшеюся институционализировавшиеся
+институционализировавшийся институционализировавшимися институционализировавшимся институционализировавшихся институционализировавшуюся
+интернационализировавшаяся интернационализировавшегося интернационализировавшееся интернационализировавшейся интернационализировавшемся
+интернационализировавшемуся интернационализировавшеюся интернационализировавшиеся интернационализировавшийся интернационализировавшимися
+интернационализировавшимся интернационализировавшихся интернационализировавшуюся калининградагропромкомплектами калининградагропромлегтрансах
+калининградагропромлегтрансы калининградгражданпроектах калининградгражданпроектом калининградоблгражданстрой калининградторгморнефтегазами
+калининградторгморнефтегазом кандалакшаремтехагропромснаб кандалакшаремтехагропромснаба картофелеперерабатывающего картофелеперерабатывающему
+картофелеперерабатывающими кинофоторентгеноматериалам кинофоторентгеноматериалами кинофоторентгеноматериалах кинофоторентгеноматериалов
+кинофоторентгеноматериалом коминефтедорстройремонтами комипермяцкагропромавтотранс комипермяцкагропромавтотрансам комипермяцкагропромавтотрансом
+комипермяцкагропромтехснабам комипермяцкагропромтехснабы комплектпотребкооперациями красноармейскагропромснабам красноармейскагропромснабе
+красноармейскагропромснабы красноборскремтехпредснабам красноборскремтехпредснабов красноборскремтехпредснабу красногорскагропромтрансов
+краснодаравтотрансобслуживания краснодарсельэнергопроекте краснознаменскагропромхимию краснокутагропроммехмонтажам краснокутагропроммехмонтажах
+красноленинскнефтеспецстрое краснотурьинскмежрайгазами красноярскагропроммехмонтажами красноярскагропроммехмонтажей красноярскагропромтехпроектами
+красноярскагропромтехпроекте красноярскагропромтехпроектов красноярскагропромтехпроекту красноярсккрайгражданстрой красноярскметаллоопторгами
+красноярскметаллооптторгом красноярскэнергосетьпроекту красноярскэнергосетьпроекты кузбассшахтостройиндустрии курганагропромтехпроектами
+курскагропромкомплектснабам курскагропромкомплектснабах курсктурбоатомэнергоремонта лесозаводскагропромтрансов лесопильнодеревообрабатывающая
+лесопильнодеревообрабатывающе лесопильнодеревообрабатывающего лесопильнодеревообрабатывающее лесопильнодеревообрабатывающей лесопильнодеревообрабатывающем
+лесопильнодеревообрабатывающему лесопильнодеревообрабатывающею лесопильнодеревообрабатывающие лесопильнодеревообрабатывающий лесопильнодеревообрабатывающим
+лесопильнодеревообрабатывающими лесопильнодеревообрабатывающих лесопильнодеревообрабатывающую лешуконскремтехпредхимснабов лешуконскремтехпредхимснабы
+липецкавтотрансобслуживания липецкэнергомонтажналадкою магаданоблавтотехобслуживанием магаданпромстройниипроектами магаданпромстройниипроектов
+магнитовискозиметрическими магнитовискозиметрического магнитовискозиметрическому магнитотермокондуктометрическая магнитотермокондуктометрические
+магнитотермокондуктометрический магнитотермокондуктометрическим магнитотермокондуктометрическими магнитотермокондуктометрических магнитотермокондуктометрического
+магнитотермокондуктометрическое магнитотермокондуктометрической магнитотермокондуктометрическом магнитотермокондуктометрическому магнитотермокондуктометрическою
+магнитотермокондуктометрическую матвеевкурганхлебопродуктах матвеевкурганхлебопродукте матвеевкурганхлебопродукту мосгорэлектроприбороптторгам
+мосгорэлектроприбороптторгу москвичавтотехобслуживанием москвичавтотехобслуживания мурманскагропромавтотранса мурманскагропромавтотрансов
+мурманскагропромснабсервисах мурманскагропромснабсервисом мурманскоблинвентаризацией национальнотерриториальная национальнотерриториального
+национальнотерриториальное национальнотерриториальной национальнотерриториальном национальнотерриториальному национальнотерриториальною
+национальнотерриториальную национальнотерриториальные национальнотерриториальный национальнотерриториальным национальнотерриториальными
+национальнотерриториальных неинтернационалистическими неинтернационалистического неинтернационалистическому нефтегазоперерабатывающего
+нефтегазоперерабатывающему нефтегазоперерабатывающими нефтегазстройинформрекламу нефтегазстройинформрекламы нечерноземпроекттехцентрами
+нижегородскийэнергосетьпроектам нижегородскийэнергосетьпроектами нижегородсксельэнергопроектов нижегородсксельэнергопроектом нижневартовскнефтегеофизике
+нижневартовскнефтегеофизику нижневартовскнефтепрогресс нижневартовскнефтепрогресса нижневартовскнефтепрогрессы нижневартовскстройиндустрией
+нижневолжсксельэлектросети нижневолжсксельэлектросетью нижнегородниинефтепроектов никотинамидадениндинуклеотид никотинамидадениндинуклеотида
+никотинамидадениндинуклеотидам никотинамидадениндинуклеотидами никотинамидадениндинуклеотидах никотинамидадениндинуклеотиде никотинамидадениндинуклеотидов
+никотинамидадениндинуклеотидом никотинамидадениндинуклеотиду никотинамидадениндинуклеотиды новгородагростройзаказчикам новгородагростройзаказчиками
+новгородагростройзаказчиках новгородагростройзаказчики новгородсельхозпроектхимии новгородсельхозпроектхимию новобурасскагропроммехмонтаж
+новобурасскагропроммехмонтажами новобурасскагропроммехмонтажах новобурасскагропроммехмонтажу новобурасскагропромтрансом новокузнецкметаллооптторгами
+новосибирсккиновидеосервисы новосибирсктеплоэлектропроекта новохоперскагропромтрансах новохоперскагропромтрансом норильскэнергомонтажизоляции
+организационнометодическая организационнометодические организационнометодический организационнометодическим организационнометодическими
+организационнометодических организационнометодического организационнометодическое организационнометодической организационнометодическом
+организационнометодическому организационнометодическою организационнометодическую оренбургсельэлектросетьстроя оренбургэлеваторспецстроем
+ортопедотравматологическая ортопедотравматологические ортопедотравматологический ортопедотравматологическим ортопедотравматологическими
+ортопедотравматологических ортопедотравматологического ортопедотравматологическое ортопедотравматологической ортопедотравматологическом
+ортопедотравматологическому ортопедотравматологическою ортопедотравматологическую перекристаллизовывавшегося перекристаллизовывавшемуся
+перекристаллизовывавшимися перекристаллизовывающегося перекристаллизовывающемуся перекристаллизовывающимися петрозаводскагропроммонтажам
+петрозаводскагропроммонтажов петрозаводскнефтепродуктами петрозаводскнефтепродуктах петропавловкаагропромхимию плодоовощеперерабатывающая
+плодоовощеперерабатывающего плодоовощеперерабатывающее плодоовощеперерабатывающей плодоовощеперерабатывающем плодоовощеперерабатывающему
+плодоовощеперерабатывающею плодоовощеперерабатывающие плодоовощеперерабатывающий плодоовощеперерабатывающим плодоовощеперерабатывающими
+плодоовощеперерабатывающих плодоовощеперерабатывающую повоздухораспределительнее повоздухораспределительней полибутадиеннитрилакриловая
+полибутадиеннитрилакрилового полибутадиеннитрилакриловое полибутадиеннитрилакриловой полибутадиеннитрилакриловом полибутадиеннитрилакриловому
+полибутадиеннитрилакриловою полибутадиеннитрилакриловую полибутадиеннитрилакриловые полибутадиеннитрилакриловый полибутадиеннитрилакриловым
+полибутадиеннитрилакриловыми полибутадиеннитрилакриловых похвистневоагропромтрансов похвистневоагропромтрансом поэлектрораспределительнее
+поэлектрораспределительней приморскопткомплектприборам приморскремтехпредхимснабами противобактериологическими противобактериологического
+противобактериологическому противоэпидемиологическими противоэпидемиологического противоэпидемиологическому профессионализировавшегося
+профессионализировавшемуся профессионализировавшимися пятигорсксельэнергопроектах радиоэлектрокардиографиями ремонтновосстановительного
+ремонтновосстановительному ремонтновосстановительными рентгенодефектоскопическая рентгенодефектоскопические рентгенодефектоскопический
+рентгенодефектоскопическим рентгенодефектоскопическими рентгенодефектоскопических рентгенодефектоскопического рентгенодефектоскопическое
+рентгенодефектоскопической рентгенодефектоскопическом рентгенодефектоскопическому рентгенодефектоскопическою рентгенодефектоскопическую
+рентгеноспектроскопическая рентгеноспектроскопические рентгеноспектроскопический рентгеноспектроскопическим рентгеноспектроскопическими
+рентгеноспектроскопических рентгеноспектроскопического рентгеноспектроскопическое рентгеноспектроскопической рентгеноспектроскопическом
+рентгеноспектроскопическому рентгеноспектроскопическою рентгеноспектроскопическую росглавкоопрыбсевероторгом россевзапсельэнергопроектами
+россевзапсельэнергопроектов ростовнефтепродуктавтоматике ростовнефтепродуктавтоматики ростовстроймашавтоматизация ростовтеплоэлектропроектом
+самаранефтепродуктавтоматики самарасельхозводоснабжения самойловкаагропромтрансами саратовгражданреконструкции саратовоблтрансобслуживания
+саратовсельэлектросетьстрое саратовсельэлектросетьстроя свердловскагропромсельстроем свердловскгражданпроектами сверхвысокопроизводительна
+сверхвысокопроизводительная сверхвысокопроизводительно сверхвысокопроизводительного сверхвысокопроизводительное сверхвысокопроизводительной
+сверхвысокопроизводительном сверхвысокопроизводительному сверхвысокопроизводительною сверхвысокопроизводительную сверхвысокопроизводительны
+сверхвысокопроизводительные сверхвысокопроизводительный сверхвысокопроизводительным сверхвысокопроизводительными сверхвысокопроизводительных
+смоленскагропроммехмонтажем смоленскагропроммехмонтажи смоленскагропроммехмонтажу смоленскспиртпищеагропромы солнечногорскагропромхимии
+солнечногорскагропромхимию спектросенситометрическими спектросенситометрического спектросенситометрическому спецнефтеэнергомонтажавтоматике
+ставрополькрайагрокомплекса ставропольскагропроммехмонтажами ставропольскагропроммехмонтаже старопохвистневоагропромтранса старопохвистневоагропромтрансами
+старопохвистневоагропромтрансу стереокинематографическими стереокинематографического стереокинематографическому стереорентгенографическими
+стереорентгенографического стереорентгенографическому стереофотограмметрическими стереофотограмметрического стереофотограмметрическому
+субстанционализировавшаяся субстанционализировавшегося субстанционализировавшееся субстанционализировавшейся субстанционализировавшемся
+субстанционализировавшемуся субстанционализировавшеюся субстанционализировавшиеся субстанционализировавшийся субстанционализировавшимися
+субстанционализировавшимся субстанционализировавшихся субстанционализировавшуюся тамбовпассажироавтосервиса тамбовпассажироавтосервисами
+тамбовпассажироавтосервисов тамбовпассажироавтосервису теплозвуковиброизоляционная теплозвуковиброизоляционного теплозвуковиброизоляционное
+теплозвуковиброизоляционной теплозвуковиброизоляционном теплозвуковиброизоляционному теплозвуковиброизоляционною теплозвуковиброизоляционную
+теплозвуковиброизоляционные теплозвуковиброизоляционный теплозвуковиброизоляционным теплозвуковиброизоляционными теплозвуковиброизоляционных
+термоэлектрофотографическая термоэлектрофотографические термоэлектрофотографический термоэлектрофотографическим термоэлектрофотографическими
+термоэлектрофотографических термоэлектрофотографического термоэлектрофотографическое термоэлектрофотографической термоэлектрофотографическом
+термоэлектрофотографическому термоэлектрофотографическою термоэлектрофотографическую тетрафтортетрахлорпропанам тетрафтортетрахлорпропанами
+тетрафтортетрахлорпропанах тетрафтортетрахлорпропанов тетрафтортетрахлорпропаном тракторомоторостроительная тракторомоторостроительного
+тракторомоторостроительное тракторомоторостроительной тракторомоторостроительном тракторомоторостроительному тракторомоторостроительною
+тракторомоторостроительную тракторомоторостроительные тракторомоторостроительный тракторомоторостроительным тракторомоторостроительными
+тракторомоторостроительных триметилолэтантринитратами триэтаноламиногидрохлорида триэтаноламиногидрохлоридам триэтаноламиногидрохлоридами
+триэтаноламиногидрохлоридах триэтаноламиногидрохлориде триэтаноламиногидрохлоридов триэтаноламиногидрохлоридом триэтаноламиногидрохлориду
+триэтаноламиногидрохлориды ультравысокотемпературного ультравысокотемпературному ультравысокотемпературными ульяновскжилкоммунпроектами
+ульяновскжилкоммунпроектов ульяновскжилкоммунпроектом уссурийскагропромкомплектом фотоэлектрогравировального фотоэлектрогравировальному
+фотоэлектрогравировальными фотоэлектрокондуктографией фотоэлектрокондуктографиею фотоэлектрокондуктографиям фотоэлектрокондуктографиями
+фотоэлектрокондуктографиях фотоэлектролюминесценциями хантымансийскнефтегазгеологию холмогорыремтехпредхимснаб холмогорыремтехпредхимснаба
+холмогорыремтехпредхимснабами художественнореставрационная художественнореставрационного художественнореставрационное художественнореставрационной
+художественнореставрационном художественнореставрационному художественнореставрационною художественнореставрационную художественнореставрационные
+художественнореставрационный художественнореставрационным художественнореставрационными художественнореставрационных центрчерноземмежавтотрансу
+частнопредпринимательскими частнопредпринимательского частнопредпринимательскому человеконенавистничествами электрогазораспределительная
+электрогазораспределительного электрогазораспределительное электрогазораспределительной электрогазораспределительном электрогазораспределительному
+электрогазораспределительною электрогазораспределительную электрогазораспределительные электрогазораспределительный электрогазораспределительным
+электрогазораспределительными электрогазораспределительных электрокардиостимуляторами электромашиностроительного электромашиностроительному
+электромашиностроительными электроприборостроительная электроприборостроительного электроприборостроительное электроприборостроительной
+электроприборостроительном электроприборостроительному электроприборостроительною электроприборостроительную электроприборостроительные
+электроприборостроительный электроприборостроительным электроприборостроительными электроприборостроительных электрорадионавигационного
+электрорадионавигационному электрорадионавигационными электрорентгенографическая электрорентгенографические электрорентгенографический
+электрорентгенографическим электрорентгенографическими электрорентгенографических электрорентгенографического электрорентгенографическое
+электрорентгенографической электрорентгенографическом электрорентгенографическому электрорентгенографическою электрорентгенографическую
+электросветочувствительная электросветочувствительного электросветочувствительное электросветочувствительной электросветочувствительном
+электросветочувствительному электросветочувствительною электросветочувствительную электросветочувствительные электросветочувствительный
+электросветочувствительным электросветочувствительными электросветочувствительных электростальгражданпроектам электростальгражданпроекте
+электротеплоаккумуляторами электрофотолюминесценциями энгельсагропроммехмонтажам юганскнефтедорстройремонтах юганскнефтедорстройремонту
+юговостокэлектросетьстроем южуралсельэлектросетьстроем южуралсельэлектросетьстрою южуралсельэлектросетьстроя южуралэнергостроймеханизацию
+]]
 local CommonWords = {}
 local CommonSet = {}
 
@@ -292,7 +430,7 @@ local function Normalize(word)
             end
             table.insert(characters, utf8.char(code))
         end
-        if #characters < 2 or #characters > 30 then
+        if #characters < 2 or #characters > 64 then
             return nil
         end
         return table.concat(characters)
@@ -346,6 +484,7 @@ end
 local Features = {
     Words = {}, MatchWords = {}, Serial = 0, History = {},
     ConfigName = "default", WordsName = "words", IncludeWords = true, Input = "",
+    Legit = false, Errors = 1, Delay = 0,
 }
 if type(Environment.WordAutoTypeHistory) == "table" then
     Features.History = Environment.WordAutoTypeHistory
@@ -374,7 +513,7 @@ end
 
 function Features.Rebuild(words)
     local normalized = Features.ParseWords(words)
-    local index, count = BuildDictionary((BuiltInDictionaryText .. "\n" .. table.concat(normalized, "\n")):gsub("%s+", "\n"))
+    local index, count = BuildDictionary((BuiltInDictionaryText .. "\n" .. UltraDictionaryText .. "\n" .. table.concat(normalized, "\n")):gsub("%s+", "\n"))
     if not Alive or not index then return false end
     Features.Words = normalized
     Dictionary, WordCount = index, count
@@ -405,6 +544,40 @@ function Features.Remember(word)
         uses = math.min(100000, (type(previous) == "table" and tonumber(previous.uses) or 0) + 1),
         match = Features.Serial,
     }
+end
+
+function Features.Number(controlName, field, minimum, maximum)
+    local control = Controls[controlName]
+    local value = control and type(control.Value) == "table" and tonumber(control.Value.Default)
+    if value and value == value and value > -math.huge and value < math.huge then
+        Features[field] = math.clamp(value, minimum, maximum)
+    end
+    return Features[field]
+end
+
+function Features.MakeSteps(characters, weights, job)
+    local mistakes, positions = {}, {}
+    for i = 1, #characters do positions[i] = i end
+    local errors = job.legit and math.min(job.errors, #characters) or 0
+    for i = 1, errors do
+        local chosen = Randomizer:NextInteger(i, #positions)
+        positions[i], positions[chosen] = positions[chosen], positions[i]
+        mistakes[positions[i]] = true
+    end
+    local alphabet = {}
+    for code = 1072, 1103 do table.insert(alphabet, utf8.char(code)) end
+    local steps, prefix = {}, ""
+    for i, character in ipairs(characters) do
+        if mistakes[i] then
+            local wrong
+            repeat wrong = alphabet[Randomizer:NextInteger(1, #alphabet)] until wrong ~= character
+            table.insert(steps, {text = prefix .. wrong, weight = 1, hold = Randomizer:NextNumber(0.12, 0.25)})
+            table.insert(steps, {text = prefix, weight = 1, hold = Randomizer:NextNumber(0.06, 0.12)})
+        end
+        prefix = prefix .. character
+        table.insert(steps, {text = prefix, weight = weights[i], hold = 0})
+    end
+    return steps
 end
 
 function Features.Choose(pool)
@@ -508,7 +681,9 @@ local function IsAvailable(word)
 end
 
 local function Estimate(length)
-    return (length - 1) / GetSpeed() + 0.05
+    local errors = Features.Legit and math.min(math.floor(Features.Number("LegitErrors", "Errors", 0, 10)), length - 1) or 0
+    local delay = Features.Legit and Features.Number("LegitDelay", "Delay", 0, 20) or 0
+    return delay + (length - 1 + errors * 2) / GetSpeed() + errors * 0.5 + 0.05
 end
 
 local function CandidatePool(letter, seconds)
@@ -527,9 +702,11 @@ local function CandidatePool(letter, seconds)
             return pool
         end
     end
-    local startLength, endLength, step = 2, 30, 1
-    if Mode == "Longest" then
-        startLength, endLength, step = 30, 2, -1
+    local startLength, endLength, step = 2, 25, 1
+    if Mode == "Ultra Longest" then
+        startLength, endLength, step = 64, 26, -1
+    elseif Mode == "Longest" then
+        startLength, endLength, step = 25, 2, -1
     elseif Mode == "Common" then
         startLength, endLength = 4, 10
     end
@@ -606,12 +783,29 @@ local function StartTyping()
         return false
     end
     local word = Features.Choose(pool)
-    local job = {key = CurrentTurn, word = word, smart = SmartEnabled}
+    local job = {key = CurrentTurn, word = word, smart = SmartEnabled,
+        legit = Features.Legit, errors = math.floor(Features.Number("LegitErrors", "Errors", 0, 10)),
+        delay = Features.Legit and Features.Number("LegitDelay", "Delay", 0, 20) or 0}
     Job = job
     SelectedWord = word
     job.thread = Spawn(function()
         local function Valid()
             return Job == job and CanPlay(job.key) and (AutoEnabled or SuppressedTurn ~= job.key)
+        end
+        if not Valid() then
+            if Job == job then CancelTyping("Paused", false) end
+            return
+        end
+        if job.delay > 0 then
+            Status = "Waiting before typing..."
+            local readyAt = os.clock() + job.delay
+            while os.clock() < readyAt do
+                if not Valid() then
+                    if Job == job then CancelTyping("Paused", false) end
+                    return
+                end
+                task.wait(math.min(0.05, readyAt - os.clock()))
+            end
         end
         if not Valid() then
             if Job == job then CancelTyping("Paused", false) end
@@ -633,12 +827,14 @@ local function StartTyping()
             local scale = #characters / totalWeight
             for i = 1, #weights do weights[i] = weights[i] * scale end
         end
+        local steps = Features.MakeSteps(characters, weights, job)
         local text = ""
+        local holdUntil = 0
         local nextCharacter = 1
         local progress = 0
         local lastTick = os.clock()
         local intervalSpeed = GetSpeed()
-        while nextCharacter <= #characters do
+        while nextCharacter <= #steps do
             if not Valid() then
                 if Job == job then CancelTyping("Paused", false) end
                 return
@@ -649,16 +845,23 @@ local function StartTyping()
                 return
             end
             local now = os.clock()
-            progress = progress + (now - lastTick) * intervalSpeed
+            progress = progress + math.max(0, now - math.max(lastTick, holdUntil)) * intervalSpeed
             lastTick = now
             intervalSpeed = GetSpeed()
             local changed = false
             -- Catch up all due characters after a slow frame, without extra waits.
-            while nextCharacter <= #characters and progress >= weights[nextCharacter] do
-                progress = progress - weights[nextCharacter]
-                text = text .. characters[nextCharacter]
+            while now >= holdUntil and nextCharacter <= #steps and progress >= steps[nextCharacter].weight do
+                local step = steps[nextCharacter]
+                progress = progress - step.weight
+                text = step.text
                 nextCharacter = nextCharacter + 1
                 changed = true
+                if step.hold > 0 then
+                    -- A typo and its deletion must each be visible, even at 100 chars/s.
+                    holdUntil = now + step.hold
+                    progress = 0
+                    break
+                end
             end
             if changed then SetText(text) end
         end
@@ -864,6 +1067,8 @@ function Features.Save(name, wordsOnly)
         payload = {
             version = 1, kind = "config", speed = GetSpeed(), mode = Mode,
             auto = AutoEnabled, smart = SmartEnabled, antiAfk = AntiAfkEnabled,
+            legit = Features.Legit, errors = Features.Number("LegitErrors", "Errors", 0, 10),
+            delay = Features.Number("LegitDelay", "Delay", 0, 20), includeWords = Features.IncludeWords,
             keybind = Controls.Keybind and Controls.Keybind.Value or "RightControl",
             history = Features.HistorySnapshot(), serial = Features.Serial,
         }
@@ -871,6 +1076,7 @@ function Features.Save(name, wordsOnly)
     end
     local path = Features.Path(name, wordsOnly and "words" or "config")
     writefile(path, HttpService:JSONEncode(payload))
+    if not wordsOnly then Features.RegisterProfile(name, false) end
     Notify("Saved: " .. path)
 end
 
@@ -893,11 +1099,15 @@ function Features.Load(name, wordsOnly)
     else
         local speed = tonumber(payload.speed)
         assert(speed and speed == speed and speed >= 0.01 and speed <= 100, "Invalid speed")
-        assert(payload.mode == "Common" or payload.mode == "Shortest" or payload.mode == "Longest", "Invalid mode")
+        assert(payload.mode == "Common" or payload.mode == "Shortest" or payload.mode == "Longest" or payload.mode == "Ultra Longest", "Invalid mode")
         for _, key in ipairs({"auto", "smart", "antiAfk"}) do
             assert(type(payload[key]) == "boolean", "Invalid toggle: " .. key)
         end
         assert(type(payload.keybind) == "string" and Enum.KeyCode[payload.keybind], "Invalid keybind")
+        local legit = payload.legit == true
+        local errors, delay = tonumber(payload.errors) or 1, tonumber(payload.delay) or 0
+        assert(errors == errors and errors >= 0 and errors <= 10 and errors == math.floor(errors), "Invalid error count")
+        assert(delay == delay and delay >= 0 and delay <= 20, "Invalid start delay")
         local history = {}
         local serial = tonumber(payload.serial) or 0
         assert(serial >= 0 and serial < 1e12 and serial == math.floor(serial), "Invalid match history")
@@ -930,6 +1140,14 @@ function Features.Load(name, wordsOnly)
         GetSpeed()
         Controls.Mode:Select(payload.mode)
         Mode = payload.mode
+        Features.Legit, Features.Errors, Features.Delay = legit, errors, delay
+        Controls.Legit:Set(legit)
+        Controls.LegitErrors:Set(errors)
+        Controls.LegitDelay:Set(delay)
+        Features.IncludeWords = payload.includeWords ~= false
+        Controls.IncludeWords:Set(Features.IncludeWords)
+        Features.ConfigName = name
+        Controls.ConfigName:Set(name)
         Controls.Keybind:Set(payload.keybind)
         Controls.Smart:Set(payload.smart)
         Controls.AntiAfk:Set(payload.antiAfk)
@@ -937,6 +1155,69 @@ function Features.Load(name, wordsOnly)
         SmartEnabled, AntiAfkEnabled, AutoEnabled = payload.smart, payload.antiAfk, payload.auto
     end
     Notify("Loaded: " .. path)
+end
+
+function Features.ProfileNames()
+    local names = {default = true}
+    if type(readfile) == "function" then
+        local ok, result = pcall(function() return HttpService:JSONDecode(readfile("WordAutoType_profiles.json")) end)
+        if ok and type(result) == "table" then
+            for _, name in ipairs(result) do
+                if type(name) == "string" and name:match("^[%w_-]+$") and #name <= 48 then names[name] = true end
+            end
+        end
+    end
+    if type(listfiles) == "function" then
+        local ok, paths = pcall(listfiles, ".")
+        if ok and type(paths) == "table" then
+            for _, path in ipairs(paths) do
+                local name = path:match("WordAutoType_config_([%w_-]+)%.json$")
+                if name then names[name] = true end
+            end
+        end
+    end
+    local result = {}
+    for name in pairs(names) do table.insert(result, name) end
+    table.sort(result)
+    return result
+end
+
+function Features.RegisterProfile(name, remove)
+    local names = Features.ProfileNames()
+    local result, found = {}, false
+    for _, item in ipairs(names) do
+        if item == name then found = true end
+        if not remove or item ~= name then table.insert(result, item) end
+    end
+    if not remove and not found then table.insert(result, name) end
+    table.sort(result)
+    if type(writefile) == "function" then
+        pcall(writefile, "WordAutoType_profiles.json", HttpService:JSONEncode(result))
+    end
+    if Controls.Profiles then Controls.Profiles:Refresh(result) end
+end
+
+function Features.DeleteProfile()
+    assert(type(delfile) == "function", "This executor cannot delete files")
+    local name = Features.ConfigName
+    delfile(Features.Path(name, "config"))
+    Features.RegisterProfile(name, true)
+    Notify("Deleted settings config: " .. name)
+end
+
+function Features.SetStartup(enabled)
+    assert(type(writefile) == "function", "This executor cannot save files")
+    if enabled then Features.Path(Features.ConfigName, "config") end
+    writefile("WordAutoType_startup.json", HttpService:JSONEncode({enabled = enabled, name = Features.ConfigName}))
+    Notify(enabled and ("Startup config: " .. Features.ConfigName) or "Startup config disabled")
+end
+
+function Features.LoadStartup()
+    if type(readfile) ~= "function" then return end
+    local ok, entry = pcall(function() return HttpService:JSONDecode(readfile("WordAutoType_startup.json")) end)
+    if ok and type(entry) == "table" and entry.enabled == true then
+        Features.Safe(function() Features.Load(entry.name, false) end)
+    end
 end
 
 function Features.Safe(callback)
@@ -1061,11 +1342,17 @@ local setupOk, setupError = xpcall(function()
     Controls.Speed = main:Slider({Title = "Typing Speed", Desc = "Characters per second (0.01-100)", Step = 0.01, IsTooltip = true, IsTextbox = true,
         Value = {Min = 0.01, Max = 100, Default = 8}, Callback = function() GetSpeed() end})
     Controls.Smart = main:Toggle({Title = "Smart Typing", Value = false, Callback = function(value) SmartEnabled = value end})
-    Controls.Mode = main:Dropdown({Title = "Word Mode", Values = {"Common", "Shortest", "Longest"}, Value = "Common",
+    Controls.Mode = main:Dropdown({Title = "Word Mode", Desc = "Ultra Longest: 675 built-in entries over 25 letters", Values = {"Common", "Shortest", "Longest", "Ultra Longest"}, Value = "Common",
         AllowNone = false, Callback = function(value)
             if type(value) == "table" then value = value.Title end
-            if value == "Common" or value == "Shortest" or value == "Longest" then Mode = value end
+            if value == "Common" or value == "Shortest" or value == "Longest" or value == "Ultra Longest" then Mode = value end
         end})
+    main:Section({Title = "Legit Mode"})
+    Controls.Legit = main:Toggle({Title = "Legit Mode", Value = false, Callback = function(value) Features.Legit = value end})
+    Controls.LegitErrors = main:Slider({Title = "Errors per word", Desc = "Up to one error per typed character", Step = 1, IsTextbox = true,
+        Value = {Min = 0, Max = 10, Default = 1}, Callback = function() Features.Number("LegitErrors", "Errors", 0, 10) end})
+    Controls.LegitDelay = main:Slider({Title = "Delay before typing (seconds)", Step = 0.01, IsTextbox = true,
+        Value = {Min = 0, Max = 20, Default = 0}, Callback = function() Features.Number("LegitDelay", "Delay", 0, 20) end})
     StatusPanel = main:Paragraph({Title = "Status", Desc = "Loading..."})
     settings:Section({Title = "Session"})
     Controls.AntiAfk = settings:Toggle({Title = "Anti AFK", Value = true, Callback = function(value) AntiAfkEnabled = value end})
@@ -1073,34 +1360,55 @@ local setupOk, setupError = xpcall(function()
     Controls.Keybind = settings:Keybind({Title = "Menu Keybind", Value = "RightControl",
         Blacklist = {"Return", "KeypadEnter", "MouseLeftButton", "MouseRightButton"}, Callback = function() end})
     settings:Button({Title = "Unload", Icon = "power", Callback = function() Session.Unload() end})
-    local configs = Window:Tab({Title = "Configs", Icon = "save"})
-    configs:Section({Title = "Settings config"})
-    configs:Input({Title = "Config name", Value = "default", Callback = function(value) Features.ConfigName = value end})
-    configs:Toggle({Title = "Include custom words", Value = true, Callback = function(value) Features.IncludeWords = value end})
-    configs:Button({Title = "Save config", Callback = function()
+    local configs = Window:Tab({Title = "Settings CFG", Icon = "save"})
+    configs:Paragraph({Title = "Settings profiles", Desc = "Save speed, word mode, Legit settings, toggles and menu key. Use a profile name with Latin letters, digits, _ or -."})
+    Controls.ConfigName = configs:Input({Title = "Profile name", Value = "default", Callback = function(value) Features.ConfigName = value end})
+    Controls.Profiles = configs:Dropdown({Title = "Saved profiles", Values = Features.ProfileNames(), Value = "default", AllowNone = false,
+        Callback = function(value)
+            if type(value) == "table" then value = value.Title or value[1] end
+            if type(value) == "string" then
+                Features.ConfigName = value
+                Controls.ConfigName:Set(value)
+            end
+        end})
+    configs:Button({Title = "Refresh profiles", Callback = function()
+        Controls.Profiles:Refresh(Features.ProfileNames())
+    end})
+    Controls.IncludeWords = configs:Toggle({Title = "Include custom words in settings CFG", Value = true, Callback = function(value) Features.IncludeWords = value end})
+    configs:Button({Title = "Save settings CFG", Callback = function()
         Features.Safe(function() Features.Save(Features.ConfigName, false) end)
     end})
-    configs:Button({Title = "Load config", Callback = function()
+    configs:Button({Title = "Load settings CFG", Callback = function()
         Features.Safe(function() Features.Load(Features.ConfigName, false) end)
     end})
-    configs:Section({Title = "Custom dictionary"})
-    configs:Input({Title = "Add words", Desc = "Russian words, separated by spaces, commas or newlines", Type = "Textarea", Value = "",
+    configs:Button({Title = "Delete settings CFG", Callback = function()
+        Features.Safe(Features.DeleteProfile)
+    end})
+    configs:Button({Title = "Use profile on startup", Callback = function()
+        Features.Safe(function() Features.Save(Features.ConfigName, false); Features.SetStartup(true) end)
+    end})
+    configs:Button({Title = "Disable startup profile", Callback = function()
+        Features.Safe(function() Features.SetStartup(false) end)
+    end})
+    local wordsTab = Window:Tab({Title = "Words CFG", Icon = "book-open"})
+    wordsTab:Section({Title = "Custom dictionary"})
+    wordsTab:Input({Title = "Add words", Desc = "Russian words, separated by spaces, commas or newlines", Type = "Textarea", Value = "",
         Callback = function(value) Features.Input = value end})
-    configs:Button({Title = "Add to dictionary", Callback = function()
+    wordsTab:Button({Title = "Add to dictionary", Callback = function()
         Features.Safe(function()
             local incoming = Features.ParseWords(Features.Input)
-            assert(#incoming > 0, "Enter Russian words (2-30 letters)")
+            assert(#incoming > 0, "Enter Russian words (2-64 letters)")
             local words = table.clone(Features.Words)
             for _, word in ipairs(incoming) do table.insert(words, word) end
             assert(Features.Rebuild(words), "Dictionary loading cancelled")
             Notify("Custom words: " .. tostring(#Features.Words) .. " | Total: " .. tostring(WordCount))
         end)
     end})
-    configs:Input({Title = "Words config name", Value = "words", Callback = function(value) Features.WordsName = value end})
-    configs:Button({Title = "Save words only", Callback = function()
+    wordsTab:Input({Title = "Words config name", Value = "words", Callback = function(value) Features.WordsName = value end})
+    wordsTab:Button({Title = "Save words only", Callback = function()
         Features.Safe(function() Features.Save(Features.WordsName, true) end)
     end})
-    configs:Button({Title = "Load words (merge)", Callback = function()
+    wordsTab:Button({Title = "Load words (merge)", Callback = function()
         Features.Safe(function() Features.Load(Features.WordsName, true) end)
     end})
 
@@ -1175,6 +1483,7 @@ end)
 
 
 Features.Rebuild({})
+Features.LoadStartup()
 
 Spawn(function()
     local nextSync = os.clock() + 2
